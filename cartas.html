@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirada de Cartas Gratis - [Nombre]</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="page-cartas">
+    <nav class="navbar">
+        <div class="logo">🌙 Luna Nombre</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="cartas.html">Tirada Gratis</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <main class="cartas-section">
+        <div class="velas-bg"></div>
+        
+        <div class="container">
+            <h1>Tira las cartas</h1>
+            <p class="instrucciones">Concentrate en tu pregunta. Cuando estés lista, haz clic en el mazo.</p>
+
+            <!-- Paso 1: Pregunta -->
+            <div id="paso-1" class="pregunta-box">
+                <input type="text" id="pregunta-input" placeholder="¿Qué quieres saber? (opcional)">
+            </div>
+
+            <!-- Paso 2: El Mazo -->
+            <div id="paso-2" class="mazo-container">
+                <div class="cartas-apiladas" onclick="barajar()">
+                    <!-- 3 cartas visuales apiladas -->
+                    <div class="carta-reverso carta-1"></div>
+                    <div class="carta-reverso carta-2"></div>
+                    <div class="carta-reverso carta-3"></div>
+                </div>
+                <p class="click-text">Click para barajar</p>
+            </div>
+
+            <!-- Paso 3: Barajando (animación) -->
+            <div id="paso-3" class="barajando-container" style="display:none;">
+                <div class="carta-moviendose"></div>
+                <p>Barajando las energías...</p>
+            </div>
+
+            <!-- Paso 4: Resultado -->
+            <div id="paso-4" class="resultado-container" style="display:none;">
+                <h2>Tu tirada</h2>
+                <div id="tirada-cartas" class="tirada-grid">
+                    <!-- Cartas se insertan con JS -->
+                </div>
+                <div class="acciones-finales">
+                    <button onclick="nuevaTirada()" class="btn-secondary">Nueva tirada</button>
+                    <a href="index.html#contacto" class="btn-primary">Consulta personalizada</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>🌙 2024 [Nombre] - Las cartas son guía, no verdad absoluta ✨</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cartas.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Astral - [Nombre]</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🌙 Luna Nombre</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="cartas.html">Tirada Gratis</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <main class="astral-section">
+        <div class="container">
+            <h1>Tu Carta Astral</h1>
+            <p class="intro">Descubre la posición de los planetas en el momento de tu nacimiento</p>
+
+            <form id="form-astral" class="form-astral">
+                <div class="form-group">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" id="fecha-nac" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Hora (lo más exacta posible)</label>
+                    <input type="time" id="hora-nac" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Lugar de nacimiento</label>
+                    <input type="text" id="lugar-nac" placeholder="Ciudad, País" required>
+                </div>
+
+                <button type="submit" class="btn-primary btn-large">Calcular mi carta</button>
+            </form>
+
+            <div id="resultado-astral" class="resultado-astral" style="display:none;">
+                <!-- Resultado se muestra aquí -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>🌙 2024 [Nombre] ✨</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/astrologia.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - [Nombre]</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🌙 Luna Nombre</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="cartas.html">Tirada Gratis</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <main class="blog-page">
+        <div class="container">
+            <h1>Mis escritos</h1>
+            <p class="blog-intro">Reflexiones sobre tarot, brujería, cocina mágica y vida cotidiana</p>
+            
+            <div id="posts-container" class="posts-grid">
+                <!-- Los posts se cargan aquí desde Notion -->
+                <div class="loading">Cargando energías...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>🌙 2024 [Nombre] - Hecho con magia ✨</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
