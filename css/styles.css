@@ -710,6 +710,26 @@ h2::after {
     z-index: 1;
 }
 
+/* Forzar texto sólido y legible en secciones con difuminados */
+.sobre h2,
+.cta-juego h2,
+.contacto h2 {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: var(--color-texto) !important;
+    color: var(--color-texto) !important;
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-texto,
+.contacto-info,
+.cta-juego .container {
+    position: relative;
+    z-index: 2;
+}
+
 /* ===== CONTACTO CON LUZ ===== */
 .contacto {
     background: var(--color-fondo);
@@ -1907,25 +1927,30 @@ h2::before {
     overflow: hidden;
 }
 
-/* El primero (Lectura de Cartas Españolas) apenas más oscuro */
+/* Ajuste: eliminar fondo amarillo del card destacado para mejorar legibilidad */
 .servicio-card.destacado {
-    background: rgba(201, 162, 39, 0.08);
-    border: 2px solid rgba(201, 162, 39, 0.4);
-    box-shadow: 
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 2px solid rgba(201, 162, 39, 0.25);
+    box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(201, 162, 39, 0.1),
-        inset 0 0 60px rgba(201, 162, 39, 0.03);
+        0 0 20px rgba(201, 162, 39, 0.08);
 }
 
-/* Quitar el fondo amarillo del anterior */
+/* Desactivar brillo/interferencia visual */
 .servicio-card.destacado .glitter-bg {
-    opacity: 0.4;
-    animation: glitterSoft 4s ease-in-out infinite;
+    opacity: 0 !important;
+    animation: none !important;
+    pointer-events: none;
 }
 
-@keyframes glitterSoft {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 0.5; }
+/* Asegurar que el contenido del card esté sobre cualquier pseudo-elemento */
+.servicio-card.destacado > *,
+.servicio-card.destacado h3,
+.servicio-card.destacado p,
+.servicio-card.destacado ul,
+.servicio-card.destacado a {
+    position: relative;
+    z-index: 2;
 }
 
 /* La etiqueta "Más popular" ahora en el primero */
