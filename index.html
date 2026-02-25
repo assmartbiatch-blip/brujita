@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre de tu amiga - Bruja, Tarot y Guía Espiritual</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo">🌙 Luna Nombre</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#sobre">Sobre mí</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="cartas.html">Tirada Gratis</a></li>
+            <li><a href="carta-astral.html">Carta Astral</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Descubre los mensajes del universo</h1>
+            <p class="subtitle">Tarot, guía espiritual y magia ancestral para iluminar tu camino</p>
+            <a href="cartas.html" class="btn-primary">Tira las cartas gratis</a>
+            <a href="#contacto" class="btn-secondary">Agenda tu sesión</a>
+        </div>
+        <div class="hero-decoration">
+            <div class="moon">🌙</div>
+            <div class="stars"></div>
+        </div>
+    </header>
+
+    <!-- Sobre Ella -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-img">
+                    <div class="img-placeholder">Foto de ella aquí</div>
+                </div>
+                <div class="sobre-texto">
+                    <h2>Soy [Nombre]</h2>
+                    <p class="tagline">Bruja de tradición, lectora de cartas y cocinera de almas</p>
+                    <p>Desde hace X años camino entre el mundo visible y el invisible. Mis abuelas me enseñaron el lenguaje de las hierbas, las cartas me hablan desde los 15, y la cocina... bueno, esa es mi magia de todos los días.</p>
+                    <p>No te prometo que la vida será fácil, pero sí que juntas podemos encontrar claridad en el caos.</p>
+                    
+                    <div class="habilidades">
+                        <span class="tag">🔮 Tarot terapéutico</span>
+                        <span class="tag">🌿 Herbolaria</span>
+                        <span class="tag">🍲 Cocina mágica</span>
+                        <span class="tag">🧵 Costura ceremonial</span>
+                        <span class="tag">✨ Limpiezas energéticas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <h2>Mis Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="icono">🎴</div>
+                    <h3>Lectura de Tarot</h3>
+                    <p>3 cartas: $XX | Tirada completa: $XX</p>
+                    <ul>
+                        <li>Preguntas específicas</li>
+                        <li>Orientación mensual</li>
+                        <li>Tirada anual (12 meses)</li>
+                    </ul>
+                    <button class="btn-small">Reservar</button>
+                </div>
+
+                <div class="servicio-card destacado">
+                    <div class="icono">🌟</div>
+                    <h3>Guía Espiritual</h3>
+                    <p>Sesión de 1 hora: $XX</p>
+                    <ul>
+                        <li>Lectura de cartas incluida</li>
+                        <li>Rituales personalizados</li>
+                        <li>Acompañamiento energético</li>
+                    </ul>
+                    <button class="btn-small">Reservar</button>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="icono">🏠</div>
+                    <h3>Limpieza del Hogar</h3>
+                    <p>A consultar según espacio</p>
+                    <ul>
+                        <li>Barrida energética</li>
+                        <li>Protecciones para el hogar</li>
+                        <li>Asesoría de altares</li>
+                    </ul>
+                    <button class="btn-small">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Juego -->
+    <section class="cta-juego">
+        <div class="container">
+            <h2>¿Curiosa por saber qué dicen las cartas hoy?</h2>
+            <p>Tira una carta gratuita y recibe un mensaje del universo</p>
+            <a href="cartas.html" class="btn-primary btn-large">Jugar ahora</a>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <p>📱 WhatsApp: +XX XXXX XXXX</p>
+                    <p>📧 Email: bruja@email.com</p>
+                    <p>📍 Ciudad, País</p>
+                    <p>🕐 Horario: Lun-Vie 10hs a 20hs</p>
+                </div>
+                <form class="contacto-form">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu email" required>
+                    <select>
+                        <option value="">Tipo de consulta</option>
+                        <option value="tarot">Lectura de Tarot</option>
+                        <option value="guia">Guía Espiritual</option>
+                        <option value="limpieza">Limpieza de Hogar</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <textarea placeholder="Cuéntame brevemente qué necesitas..." rows="4"></textarea>
+                    <button type="submit" class="btn-primary">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>🌙 2024 [Nombre] - Hecho con magia ✨</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
