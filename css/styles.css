@@ -1831,3 +1831,158 @@ footer::before {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, var(--color-primario-suave) 0%, var(--color-secundario-claro) 100%);
 }
+/* ===== CORRECCIÓN: TÍTULOS LEGIBLES CON FONDO DIFUMINADO ===== */
+
+h2 {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 50px;
+    z-index: 1;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 5, 8, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    z-index: -1;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajuste específico para cada sección */
+.sobre h2::before,
+.contacto h2::before,
+.blog-page h1::before,
+.astral-section h1::before,
+.cartas-section h1::before {
+    background: rgba(5, 5, 8, 0.7);
+}
+
+/* Para páginas internas con h1 */
+.blog-page h1,
+.astral-section h1,
+.cartas-section h1 {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 50px;
+    z-index: 1;
+    font-size: 2.5rem;
+}
+
+.blog-page h1::before,
+.astral-section h1::before,
+.cartas-section h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 5, 8, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    z-index: -1;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== CORRECCIÓN: SERVICIOS - DESTACAR LECTURA DE CARTAS ===== */
+
+/* Reset: todos los cards con mismo fondo base */
+.servicio-card {
+    background: rgba(255, 255, 255, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+/* El primero (Lectura de Cartas Españolas) apenas más oscuro */
+.servicio-card.destacado {
+    background: rgba(201, 162, 39, 0.08);
+    border: 2px solid rgba(201, 162, 39, 0.4);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(201, 162, 39, 0.1),
+        inset 0 0 60px rgba(201, 162, 39, 0.03);
+}
+
+/* Quitar el fondo amarillo del anterior */
+.servicio-card.destacado .glitter-bg {
+    opacity: 0.4;
+    animation: glitterSoft 4s ease-in-out infinite;
+}
+
+@keyframes glitterSoft {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+/* La etiqueta "Más popular" ahora en el primero */
+.servicio-card:first-child::before {
+    content: "✦ Más consultado ✦";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
+    color: var(--color-fondo);
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(201, 162, 39, 0.3);
+    z-index: 2;
+}
+
+/* Quitar la etiqueta del segundo (Guía Espiritual) ya no es destacado */
+.servicio-card:nth-child(2)::before {
+    display: none;
+}
+
+/* Los demás cards (Péndulo y Limpieza) sin fondo morado */
+.servicio-card:nth-child(3),
+.servicio-card:nth-child(4) {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.servicio-card:nth-child(3):hover,
+.servicio-card:nth-child(4):hover {
+    border-color: rgba(201, 162, 39, 0.3);
+}
+
+/* Ajuste del grid para 4 elementos */
+.servicios-grid.cuatro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Responsive: en móvil 1 columna */
+@media (max-width: 768px) {
+    .servicios-grid.cuatro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    h2, .blog-page h1, .astral-section h1, .cartas-section h1 {
+        padding: 15px 30px;
+        font-size: 2rem;
+    }
+    
+    h2::before, .blog-page h1::before, .astral-section h1::before, .cartas-section h1::before {
+        border-radius: 30px;
+    }
+}
