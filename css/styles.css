@@ -1537,3 +1537,29 @@ footer::before {
         display: none;
     }
 }
+/* ===== IMAGEN RESPONSIVE ===== */
+.sobre-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* En móvil: imagen más pequeña */
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .sobre-img {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .sobre-img img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
