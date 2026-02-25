@@ -546,6 +546,7 @@ h2::after {
             rgba(26, 10, 46, 0.9) 50%,
             rgba(5, 5, 8, 1) 100%);
     position: relative;
+    overflow: hidden;
 }
 
 .servicios::after {
@@ -1647,11 +1648,6 @@ footer::before {
 }
 
 /* ===== SILUETAS DE GATOS ===== */
-.servicios {
-    position: relative;
-    overflow: hidden;
-}
-
 .gato-sombra {
     position: absolute;
     bottom: 40px;
