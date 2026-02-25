@@ -1954,7 +1954,7 @@ h2::before {
 }
 
 /* La etiqueta "Más popular" ahora en el primero */
-.servicio-card:first-child::before {
+.servicio-card.destacado-compact::before {
     content: "✦ Más consultado ✦";
     position: absolute;
     top: -12px;
