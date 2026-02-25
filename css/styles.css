@@ -2034,3 +2034,7 @@ h2::before {
         border-radius: 30px;
     }
 }
+/* QUITAR MANCHÓN SOLO DEL CARD DE PÉNDULO */
+.servicio-card:nth-child(3) .glitter-bg {
+    display: none !important;
+}
