@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta Astral - Meli</title>
+    <title>Carta Astral - Luz de Luna</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="galaxy-bg"></div>
+    
     <nav class="navbar">
-        <div class="logo">🌙 Luna Nombre</div>
+        <div class="logo">🌙 Luz de Luna</div>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -42,15 +44,21 @@
                 <button type="submit" class="btn-primary btn-large">Calcular mi carta</button>
             </form>
 
-            <div id="resultado-astral" class="resultado-astral" style="display:none;">
-                <!-- Resultado se muestra aquí -->
-            </div>
+            <div id="resultado-astral" class="resultado-astral" style="display:none;"></div>
         </div>
     </main>
 
     <footer>
-        <p>🌙 2024 Meli ✨</p>
+        <p>🌙 2024 Luz de Luna ✨</p>
     </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/59891318986?text=Hola%20Luz%20de%20Luna,%20vi%20tu%20página%20y%20quiero%20consultar" class="whatsapp-float" target="_blank" title="Chatea conmigo">
+        <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.698 5.003 1.914 7.086L2 30l6.914-1.914A13.936 13.936 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.2a11.2 11.2 0 01-5.7-1.55l-.4-.25-4.1 1.15 1.15-4.1-.25-.4A11.2 11.2 0 1116 27.2zm6.15-8.35c-.35-.15-2.05-1-2.35-1.15-.35-.1-.55-.15-.75.15-.2.35-.85 1.15-1.05 1.4-.2.2-.35.25-.7.1-.35-.15-1.45-.55-2.75-1.7-1-.9-1.7-2-1.9-2.35-.2-.35 0-.5.15-.7.15-.15.35-.4.5-.6.15-.2.2-.35.3-.55.1-.2.05-.4 0-.55-.1-.15-.75-1.8-1.05-2.45-.25-.65-.5-.55-.75-.55-.15 0-.35 0-.55 0-.2 0-.5.05-.75.35-.25.3-1 1-1 2.45 0 1.45 1.05 2.85 1.2 3.05.15.2 2.05 3.15 5 4.4.7.3 1.25.5 1.7.6.7.25 1.35.2 1.85.15.55-.1 1.7-.7 1.95-1.35.2-.65.2-1.2.15-1.35-.1-.1-.25-.2-.6-.35z"/>
+        </svg>
+        <span class="whatsapp-tooltip">¿Hablamos?</span>
+    </a>
 
     <script src="js/main.js"></script>
     <script src="js/astrologia.js"></script>
