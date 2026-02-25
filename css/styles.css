@@ -407,6 +407,7 @@ section::before {
     height: 100%;
     background: radial-gradient(circle at 50% 0%, rgba(157, 0, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 0;
 }
 
 h2 {
@@ -452,6 +453,7 @@ h2::after {
     background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
     filter: blur(80px);
     animation: floatLight 10s ease-in-out infinite;
+    z-index: 0;
 }
 
 @keyframes floatLight {
@@ -503,7 +505,7 @@ h2::after {
 }
 
 .sobre-texto h2 {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -695,6 +697,7 @@ h2::after {
     background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
     filter: blur(60px);
     animation: galaxyPulse 8s ease-in-out infinite;
+    z-index: 0;
 }
 
 @keyframes galaxyPulse {
@@ -723,6 +726,7 @@ h2::after {
     height: 100px;
     background: linear-gradient(180deg, transparent, var(--color-primario), transparent);
     opacity: 0.5;
+    z-index: 0;
 }
 
 .contacto-grid {
@@ -731,6 +735,7 @@ h2::after {
     gap: 80px;
     position: relative;
     z-index: 1;
+    align-items: center;
 }
 
 .contacto-info p {
@@ -738,6 +743,7 @@ h2::after {
     font-size: 1.3rem;
     color: var(--color-texto-dorado);
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+    text-align: center;
 }
 
 .contacto-form {
