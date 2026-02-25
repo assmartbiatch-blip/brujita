@@ -1563,3 +1563,271 @@ footer::before {
         object-fit: cover;
     }
 }
+/* ===== DORADO MÁS ELEGANTE ===== */
+:root {
+    --color-primario: #c9a227;        /* Dorado apagado elegante */
+    --color-primario-suave: #d4b84a;   /* Dorado claro suave */
+    --color-primario-oscuro: #a08220;  /* Dorado oscuro */
+}
+
+/* Actualizar todos los elementos que usaban el dorado anterior */
+.servicio-card.destacado {
+    border: 2px solid var(--color-primario);
+    box-shadow: 
+        0 0 40px rgba(201, 162, 39, 0.15),
+        inset 0 0 40px rgba(201, 162, 39, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-card.destacado::before {
+    content: "✦ Más popular ✦";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
+    color: var(--color-fondo);
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(201, 162, 39, 0.3);
+}
+
+/* ===== GRID 4 SERVICIOS ===== */
+.servicios-grid.cuatro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .servicios-grid.cuatro {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== EFECTO GLITTER ===== */
+.glitter-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 215, 0, 0.3), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255, 215, 0, 0.2), transparent),
+        radial-gradient(1px 1px at 200px 80px, rgba(255, 255, 255, 0.3), transparent),
+        radial-gradient(2px 2px at 250px 150px, rgba(255, 215, 0, 0.3), transparent);
+    background-size: 280px 280px;
+    opacity: 0;
+    animation: glitterFade 3s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+@keyframes glitterFade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.6; }
+}
+
+.servicio-card.destacado:hover .glitter-bg {
+    animation: glitterActive 1.5s ease-in-out infinite;
+}
+
+@keyframes glitterActive {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.8; transform: translateY(-5px); }
+}
+
+/* ===== SILUETAS DE GATOS ===== */
+.servicios {
+    position: relative;
+    overflow: hidden;
+}
+
+.gato-sombra {
+    position: absolute;
+    bottom: 40px;
+    font-size: 6rem;
+    opacity: 0.08;
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+    animation: gatoRespira 6s ease-in-out infinite;
+}
+
+.gato-negro {
+    left: 5%;
+    transform: scaleX(-1);
+}
+
+.gato-gris {
+    right: 5%;
+    opacity: 0.06;
+}
+
+@keyframes gatoRespira {
+    0%, 100% { transform: scale(1) scaleX(-1); opacity: 0.08; }
+    50% { transform: scale(1.05) scaleX(-1); opacity: 0.12; }
+}
+
+.gato-gris {
+    animation: gatoRespira2 7s ease-in-out infinite;
+}
+
+@keyframes gatoRespira2 {
+    0%, 100% { transform: scale(1); opacity: 0.06; }
+    50% { transform: scale(1.03); opacity: 0.1; }
+}
+
+/* En móvil: gatos más pequeños y discretos */
+@media (max-width: 768px) {
+    .gato-sombra {
+        font-size: 4rem;
+        bottom: 20px;
+    }
+    
+    .gato-negro {
+        left: 2%;
+    }
+    
+    .gato-gris {
+        right: 2%;
+    }
+}
+
+/* ===== ACTUALIZAR BOTONES CON NUEVO DORADO ===== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
+    box-shadow: 
+        0 0 20px rgba(201, 162, 39, 0.3),
+        0 10px 30px rgba(201, 162, 39, 0.15);
+}
+
+.btn-primary:hover {
+    box-shadow: 
+        0 0 40px rgba(201, 162, 39, 0.4),
+        0 15px 40px rgba(201, 162, 39, 0.2);
+}
+
+.btn-secondary {
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    box-shadow: 
+        0 0 20px rgba(201, 162, 39, 0.15),
+        inset 0 0 20px rgba(201, 162, 39, 0.03);
+}
+
+.btn-secondary:hover {
+    box-shadow: 
+        0 0 40px rgba(201, 162, 39, 0.25),
+        inset 0 0 30px rgba(201, 162, 39, 0.08);
+}
+
+/* ===== ACTUALIZAR TÍTULOS Y TEXTOS ===== */
+h2 {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario-claro) 100%);
+}
+
+.servicio-card h3 {
+    color: var(--color-primario);
+}
+
+.icono {
+    filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.2));
+}
+
+.logo {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-suave) 50%, var(--color-primario) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content h1 {
+    background: linear-gradient(135deg, 
+        var(--color-primario) 0%, 
+        var(--color-primario-suave) 25%,
+        var(--color-primario) 50%,
+        var(--color-secundario-claro) 75%,
+        var(--color-primario) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+    text-shadow: 0 0 10px rgba(201, 162, 39, 0.3);
+}
+
+.nav-links a::after {
+    background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+    box-shadow: 0 0 10px var(--color-primario);
+}
+
+.contacto-form input:focus,
+.contacto-form select:focus,
+.contacto-form textarea:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.15);
+}
+
+.pregunta-box input:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 40px rgba(201, 162, 39, 0.2);
+}
+
+.carta-resultado:hover {
+    border-color: rgba(201, 162, 39, 0.3);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(201, 162, 39, 0.1);
+}
+
+.posicion {
+    color: var(--color-secundario-claro);
+}
+
+.carta-resultado h3 {
+    color: var(--color-primario);
+}
+
+.form-group label {
+    color: var(--color-primario);
+}
+
+.form-group input:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.15);
+}
+
+.carta-astral-resultado {
+    border: 2px solid rgba(201, 162, 39, 0.3);
+    animation: resultGlow 4s ease-in-out infinite;
+}
+
+@keyframes resultGlow {
+    0%, 100% { box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), 0 0 60px rgba(157, 0, 255, 0.15); }
+    50% { box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), 0 0 80px rgba(201, 162, 39, 0.15); }
+}
+
+footer::before {
+    color: var(--color-primario);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--color-primario-suave) 0%, var(--color-secundario-claro) 100%);
+}
