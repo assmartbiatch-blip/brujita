@@ -514,7 +514,7 @@ section {
     z-index: 10;
 }
 
-/* ===== ESTILO CORREGIDO PARA TODOS LOS TÍTULOS PRINCIPALES (h2 y h1 de secciones internas) ===== */
+/* ===== ESTILO CORREGIDO PARA TODOS LOS TÍTULOS PRINCIPALES ===== */
 h2,
 .cartas-section h1,
 .blog-page h1,
@@ -529,13 +529,16 @@ h2,
     transform: translateX(-50%);
     padding: 20px 50px;
     z-index: 1;
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario-claro) 100%);
+    /* Aseguramos que el color del texto sea el dorado brillante */
+    color: var(--color-primario-suave); /* ← Cambio: color sólido como respaldo */
+    background: linear-gradient(135deg, #f0e68c, var(--color-primario), #ffd700); /* Más brillo */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* ← Añadido: resplandor dorado */
 }
 
-/* El pseudo-elemento que crea el fondo difuminado */
+/* El pseudo-elemento que crea el fondo difuminado - AHORA MÁS SUTIL */
 h2::before,
 .cartas-section h1::before,
 .blog-page h1::before,
@@ -546,12 +549,31 @@ h2::before,
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(5, 5, 8, 0.7); /* Fondo oscuro sólido pero con transparencia */
-    backdrop-filter: blur(20px);    /* El efecto difuminado */
+    background: rgba(10, 5, 20, 0.4); /* ← CAMBIO CLAVE: más transparente */
+    backdrop-filter: blur(15px); /* Un poco menos de blur */
     border-radius: 50px;
     z-index: -1;
-    border: 1px solid rgba(201, 162, 39, 0.3);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.5); /* Dorado más visible */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3); /* Brillo exterior */
+}
+
+/* La estrellita decorativa después del título */
+h2::after,
+.cartas-section h1::after,
+.blog-page h1::after,
+.astral-section h1::after {
+    content: '✦ ✦ ✦';
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: var(--color-secundario-claro);
+    text-shadow: 0 0 15px rgba(255, 107, 157, 0.8);
+    background: none;
+    -webkit-text-fill-color: initial;
+    position: relative;
+    left: 0;
+    transform: none;
+    letter-spacing: 8px;
 }
 
 /* La estrellita decorativa después del título */
