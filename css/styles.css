@@ -667,113 +667,39 @@ h2::after,
 }
 
 /* ===== SERVICIOS ===== */
-.servicios {
-    background: 
-        linear-gradient(180deg, 
-            rgba(5, 5, 8, 1) 0%, 
-            rgba(26, 10, 46, 0.95) 50%,
-            rgba(5, 5, 8, 1) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.servicios-grid.cuatro {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 950px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
-}
-
+/* ===== SERVICIOS - VERSIÓN LEGIBLE ===== */
 .servicio-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(20, 10, 30, 0.8);  /* Fondo morado oscuro sólido */
     padding: 40px 30px;
     border-radius: 30px;
     text-align: center;
-    border: 1px solid rgba(201, 162, 39, 0.2);
-    backdrop-filter: blur(10px);
+    border: 2px solid #c9a227;  /* Borde dorado visible */
+    backdrop-filter: blur(5px);
     transition: all 0.4s;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.servicio-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.1), transparent);
-    transition: left 0.5s;
-}
-
-.servicio-card:hover::before {
-    left: 100%;
-}
-
-.servicio-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(201, 162, 39, 0.4);
-    box-shadow: 
-        0 20px 60px rgba(157, 0, 255, 0.3),
-        0 0 40px rgba(201, 162, 39, 0.2);
-}
-
-.servicio-card.destacado-compact {
-    border: 2px solid rgba(201, 162, 39, 0.3);
-    box-shadow: 
-        0 0 40px rgba(201, 162, 39, 0.15),
-        inset 0 0 40px rgba(201, 162, 39, 0.03);
-}
-
-.servicio-card.destacado-compact::before {
-    content: "✦ Más consultado ✦";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #ffd700, #ffaa00);  /* Fondo dorado */
-    color: #1a0a2e;  /* TEXTO MORADO OSCURO - para que contraste */
-    padding: 8px 25px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), 0 0 20px #ffd700;
-    z-index: 10;
-    border: 1px solid white;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.3);
-}
-
-.icono {
-    font-size: 4rem;
-    margin-bottom: 25px;
-    filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.3));
-    animation: iconFloat 3s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
+/* Títulos de los servicios (Guía Espiritual, etc) */
 .servicio-card h3 {
     font-family: var(--fuente-titulo);
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: var(--color-primario);
-    text-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+    color: #ffd966;  /* Dorado brillante */
+    text-shadow: 0 0 10px #ffaa00;
+    font-weight: 700;
 }
 
+/* Precios */
 .servicio-card p {
-    color: var(--color-secundario-claro);
+    color: #e0b0ff;  /* Morado claro */
     font-size: 1.2rem;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
+/* Listas de características */
 .servicio-card ul {
     list-style: none;
     margin: 25px 0;
@@ -784,15 +710,71 @@ h2::after,
     padding: 10px 0;
     padding-left: 25px;
     position: relative;
-    color: var(--color-texto-dorado);
+    color: white;  /* TEXTO BLANCO - MÁS LEGIBLE */
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
+/* Viñetas decorativas */
 .servicio-card li::before {
     content: "✦";
     position: absolute;
     left: 0;
-    color: var(--color-secundario);
-    text-shadow: 0 0 10px rgba(183, 110, 255, 0.8);
+    color: #ffd966;  /* Dorado */
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #ffaa00;
+}
+
+/* Botones dentro de cards */
+.servicio-card .btn-small {
+    margin-top: 15px;
+    background: linear-gradient(135deg, #b76eff, #9d00ff);
+    color: white;
+    border: 1px solid #ffd966;
+    font-weight: 600;
+    padding: 12px 30px;
+}
+
+/* Card destacado (el de cartas) */
+.servicio-card.destacado-compact {
+    border: 3px solid #ffd966;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+/* Etiqueta "Más consultado" - FONDO OSCURO CON TEXTO DORADO */
+.servicio-card.destacado-compact::before {
+    content: "✦ Más consultado ✦";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a0a2e;  /* Fondo morado oscuro */
+    color: #ffd966;  /* Texto dorado */
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid #ffd966;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Efecto hover */
+.servicio-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd966;
+    box-shadow: 0 20px 40px rgba(157, 0, 255, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+    background: rgba(30, 15, 45, 0.9);
+}
+
+/* Iconos */
+.icono {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 15px #ffd966);
+    animation: iconFloat 3s ease-in-out infinite;
 }
 
 /* ===== CTA JUEGO (ya no es necesario, pero lo dejamos por si acaso) ===== */
