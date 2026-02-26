@@ -735,14 +735,17 @@ h2::after,
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
-    color: var(--color-fondo);
+    background: linear-gradient(135deg, #ffd700, #ffaa00);  /* Fondo dorado */
+    color: #1a0a2e;  /* TEXTO MORADO OSCURO - para que contraste */
     padding: 8px 25px;
     border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    box-shadow: 0 5px 20px rgba(201, 162, 39, 0.3);
-    z-index: 2;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), 0 0 20px #ffd700;
+    z-index: 10;
+    border: 1px solid white;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.3);
 }
 
 .icono {
